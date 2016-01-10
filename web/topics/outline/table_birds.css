@@ -1,0 +1,50 @@
+.bird_list {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+.bird_list td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+
+.bird_list caption {
+	font-weight: bold;
+	background: #d0d0d0;
+	border: 1px solid #ccc;
+}
+
+.bird_list th {
+	background: #d0d0d0;
+	border: 1px solid #ccc;
+	text-align: left;
+}
+
+.bird_list tr {
+	border: 1px solid #ccc;
+}
+
+.bird_list tr:nth-child(even) {
+	background: #e0e0e0;
+}
+
+/* Column widths are based on these cells */
+.column_number {
+  width: 18%;
+}
+
+.column_name {
+  width: 20%;
+}
+
+.column_date_seen {
+  width: 14%;
+}
+
+.column_comments {
+  width: 48%;
+}
