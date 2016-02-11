@@ -1,8 +1,8 @@
 /*
- * jQuery treetable Plugin 3.2.0
+ * jQuery treetable Plugin 3.2.1
  * http://ludo.cubicphuse.nl/jquery-treetable
- *
- * Copyright 2013, Ludo van den Boom
+ * The only functional change since 3.2.0 by Ludo van den Boom is initialState is expanded, not collapesed.
+ * 3.2.0 Copyright 2013, Ludo van den Boom, 3.2.1 Copyright 2016, Scott Haines
  * Dual licensed under the MIT or GPL Version 2 licenses.
  */
 (function($) {
@@ -432,7 +432,7 @@
         expanderTemplate: "<a href='#'>&nbsp;</a>",
         indent: 19,
         indenterTemplate: "<span class='indenter'></span>",
-        initialState: "collapsed",
+        initialState: "expanded",
         nodeIdAttr: "ttId", // maps to data-tt-id
         parentIdAttr: "ttParentId", // maps to data-tt-parent-id
         stringExpand: "Expand",
