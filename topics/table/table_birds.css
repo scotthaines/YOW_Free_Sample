@@ -20,6 +20,8 @@
 
 .bird_list th {
 	background: #d0d0d0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	border: 1px solid #ccc;
 	text-align: left;
 }
