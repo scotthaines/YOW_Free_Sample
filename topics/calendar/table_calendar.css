@@ -18,3 +18,11 @@
 	border: 1px solid #ccc;
 }
 
+/* Special row formatting */
+.cal_row_name {
+	font-weight: bold;
+}
+
+.cal_row_comment {
+	font-style: italic;
+}
