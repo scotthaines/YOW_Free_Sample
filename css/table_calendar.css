@@ -1,0 +1,28 @@
+.cal_list {
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+  cellspacing: 3px;
+  cellpadding: 3px;
+  border: 3px solid #888;
+}
+
+.cal_list td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+
+.cal_list tr {
+	border: 1px solid #ccc;
+}
+
+/* Special row formatting */
+.cal_row_name {
+	font-weight: bold;
+}
+
+.cal_row_comment {
+	font-style: italic;
+}

@@ -68,3 +68,12 @@
 {
 	text-align: left;
 }
+
+table {
+    page-break-inside: avoid;
+}		
+
+tr {
+	page-break-inside: avoid;
+	page-break-before: auto;
+}
