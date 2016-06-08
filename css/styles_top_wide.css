@@ -1,0 +1,15 @@
+#image_top_wide
+{
+    margin: 0 auto 10px auto;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    color: white;
+}
+
+#image_top_wide h2
+{ 
+    position: absolute;
+    font-size: 160%;
+    top: 0px; 
+    left: 20px; 
+}
