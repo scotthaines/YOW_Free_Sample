@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <title>Slideshow with captions</title>
+  <title>Slideshow customized</title>
   <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
   <link href="../../css/styles.css" rel="stylesheet" type="text/css"
   media="screen and (min-width: 1024px)" />
@@ -12,16 +12,27 @@
   media="screen and (max-width: 1023px)" />
   <link href="../../css/print.css" rel="stylesheet" type="text/css"
   media="print" />
+  <link href="../../css/slideshow_caption.css" rel="stylesheet" type="text/css"
+  />
   <script type="text/javascript" src="../../js/jquery.js">
 	</script>
   <!-- bxSlider Javascript file -->
-  <script type="text/javascript" src="../../js/jquery.bxslider.min.js">
+  <script type="text/javascript" src="../../js/jquery.bxslider.js">
   </script>
   <!-- bxSlider CSS file -->
-  <link href="../../css/jquery.bxslider.min.css" rel="stylesheet" />
+  <link href="../../css/jquery.bxslider_customized.css" rel="stylesheet" />
   <script type="text/javascript">
   $(document).ready(function(){
-  $('.bxslider').bxSlider();
+  $('.bxslider').bxSlider(
+  {
+  mode: 'fade',
+  speed: 1,
+  startSlide: 0,
+  captions: false,
+  adaptiveHeight: false,
+  pagerType: 'short',
+  pagerShortSeparator: ' of '
+  });
 });</script>
 </head>
 
@@ -43,34 +54,56 @@
 </div>
 
 <div id="content">
-<h2>Slideshow with captions</h2>
+<h2>Slideshow customized</h2>
 <ul class="bxslider">
   <li><img src="./data/Golden-mantled_ground_squirrel_-_scale_25_percent.jpg"
-    title="Golden-Mantled Ground Squirrel" /></li>
+    width="100%" />
+
+    <div id="slideshow_caption">
+    <a href="./data/Golden-mantled_ground_squirrel.jpg">Golden-Mantled Ground
+    Squirrel</a></div>
+  </li>
   <li><img src="./data/Yellow-bellied_marmot_-_scale_25_percent.jpg"
-    title="Yellow-Bellied Marmot" /></li>
+    width="100%" />
+
+    <div id="slideshow_caption">
+    <a href="./data/Yellow-bellied_marmot.jpg">Yellow-Bellied Marmot</a></div>
+  </li>
   <li><img
     src="./data/Yellow-bellied_marmot_and_Golden-mantled_ground_squirrel_-_scale_25_percent.jpg"
-    title="Yellow-Bellied Marmot and Golden-Mantled Ground Squirrel" /></li>
+    width="100%" />
+
+    <div id="slideshow_caption">
+    <a
+    href="./data/Yellow-bellied_marmot_and_Golden-mantled_ground_squirrel.jpg">Yellow-Bellied
+    Marmot and Golden-Mantled Ground Squirrel</a></div>
+  </li>
+  <li>
+    <div id="slideshow_caption_bold">
+    Grand Teton National Park - Inspiration Point - June 2015</div>
+	<p>At Inspiration Point the golden-mantled ground squirrel and yellow-bellied marmot show themselves to people on the rocks. This is without food to tempt them. You should not feed them. These particular animals are habituated to people probably because so many people visit. By accident or on purpose a few people probably do feed the animals. Still these animals keep an eye on people and can quickly hide in the rocks or get aggressive.</p><div align="center">U.S. National Park Service</div><div align="center">Grand Teton National Park</div><div align="center">published information:</div><div align="center"><a href="https://www.nps.gov/grte/learn/nature/animals.htm">animals</a> and <a
+    href="https://www.nps.gov/grte/planyourvisit/hike.htm">hikes</a></div>
+  </li>
 </ul>
 
 <p>This slideshow uses jQuery bxSlider<a name="L179" id="L179"></a><sub><a
-href="#L171">[1]</a></sub>. Press arrows on the image or dots below. Compare
-this page with <a href="../slideshow/topic.html">Slideshow</a>.</p>
+href="#L171">[1]</a></sub>. Press the left and right side of the image (slide). Watch the cursor change as you move it on and off either side of the image. The cursor change shows where the previous and next click are active. Press the Enter key to repeat the previous or next slide action again.</p><p>If the slideshow does not fit vertically on the screen resize the browser window narrower to make the slideshow fit vertically.</p><p>Compare this page with <a href="../slideshow/topic.html">Slideshow</a>.</p>
 
 <p><strong>References</strong></p>
 <hr />
 <ol>
-  <li><a name="L171" id="L171"></a><a href="#L179">^</a> <a
-    href="http://bxslider.com/">http://bxslider.com/</a> Retrieved on 2016 04
-    05.</li>
+  <li><a name="L171" id="L171"></a><a href="#L179">^</a> See bxSlider 4.2.5 at
+    <a
+    href="https://github.com/stevenwanderski/bxslider-4">https://github.com/stevenwanderski/bxslider-4</a>
+    and <a href="http://bxslider.com/">http://bxslider.com/</a> retrieved on
+    2016 07 04.</li>
 </ol>
 </div>
 
 <div id="footer">
 
 <div id="footer_text_left">
-Page updated 2016 04 05</div>
+Page updated 2016 07 04</div>
 
 <div id="footer_text_right">
 YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
@@ -78,15 +111,10 @@ Haines</a> is in the <a
 href="http://creativecommons.org/publicdomain/zero/1.0/">Public Domain</a></div>
 
 <div id="footer_text_right">
-<a href="../../js/jquery.bxslider.min.js">../../js/jquery.bxslider.min.js</a>
-and <a href="../../js/jquery.js">../../js/jquery.js</a> used by this page are
-not in the public domain. They are covered by licenses.</div>
+<a href="../../js/jquery.bxslider.js">../../js/jquery.bxslider.js</a> and <a
+href="../../js/jquery.js">../../js/jquery.js</a> used by this page are not in
+the public domain. They are covered by licenses.</div>
 </div>
 </div>
-<script type="text/javascript">
-  $('.bxslider').bxSlider({
-  mode: 'fade',
-  captions: true
-});</script>
 </body>
 </html>
