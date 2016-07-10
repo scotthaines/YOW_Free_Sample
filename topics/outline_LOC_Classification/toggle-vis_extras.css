@@ -1,0 +1,10 @@
+.toggle-vis:hover
+					{
+						text-decoration:underline;
+						cursor:pointer;
+						*cursor:hand
+					}
+.toggle-vis
+					{
+						color: blue;
+					}

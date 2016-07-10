@@ -1,0 +1,2157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html
+  xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <title>data table example 04e</title>
+    <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css" media="screen and (min-width: 1024px)" />
+    <link href="../../css/styles_narrow.css" rel="stylesheet" type="text/css" media="screen and (max-width: 1023px)" />
+    <link href="../../css/print.css" rel="stylesheet" type="text/css" media="print" />
+    <link rel="stylesheet" type="text/css" href="toggle-vis_extras.css" />
+    <link rel="stylesheet" type="text/css" href="datatables.min.css" />
+    <script type="text/javascript" src="../../js/jquery.js">
+ </script>
+    <script type="text/javascript" src="datatables.min.js"></script>
+    <script type="text/javascript" class="init">
+        
+$(document).ready(function() {
+        $('#example').DataTable( {
+                "paging":   false,
+                "ordering": false,
+                "columnDefs": [
+                    { className: "dt-head-left", "targets": [ '_all' ] }
+                ]
+        } );
+
+        var table = $('#example').DataTable();
+        
+        // Event listener to the two range filtering inputs to redraw on input
+        $('#max').keyup( function() {
+                table.draw();
+        } );
+
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+} );
+
+/* Custom filtering function which will search data in column four between two values */
+$.fn.dataTable.ext.search.push(
+        function( settings, data, dataIndex ) {
+                var max = parseInt( $('#max').val(), 10 );
+                var depth01 = data[0].length;
+                var depth02 = data[1].length;
+                var depth03 = data[2].length;
+                var depth04 = data[3].length;
+                var depth05 = data[4].length;
+                var depth06 = data[5].length;
+
+                if ( ( isNaN( max ) ) ||
+                         ( ( depth01 >= 1 ) && ( max >= 1 ) ) )
+                {
+                        return true;
+                }
+                if ( ( isNaN( max ) ) ||
+                         ( ( depth02 >= 1 ) && ( max >= 2 ) ) )
+                {
+                        return true;
+                }
+                if ( ( isNaN( max ) ) ||
+                         ( ( depth03 >= 1 ) && ( max >= 3 ) ) )
+                {
+                        return true;
+                }
+                if ( ( isNaN( max ) ) ||
+                         ( ( depth04 >= 1 ) && ( max >= 4 ) ) )
+                {
+                        return true;
+                }
+                if ( ( isNaN( max ) ) ||
+                         ( ( depth05 >= 1 ) && ( max >= 5 ) ) )
+                {
+                        return true;
+                }
+                if ( ( isNaN( max ) ) ||
+                         ( ( depth06 >= 1 ) && ( max >= 6 ) ) )
+                {
+                        return true;
+                }
+                return false;
+        }
+);
+</script> </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <h1>YOW Free Sample</h1>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../index.html">^</a></li>
+          <li><a href="../about/topic.html">About</a></li>
+          <li><a href="../download/topic.html">Download</a></li>
+        </ul>
+      </div>
+      <div id="content">
+        <h2>data table example 04e</h2>
+        <p>the This table is the data table custom filtering<a name="abc_ref"></a><a
+            href="#after_abc"><sub>[1]</sub></a> example reworked to be an
+          outline with depth filtering AND hiding of columns.</p>
+        <div> Toggle column: <a class="toggle-vis" data-column="0">One</a> - <a
+            class="toggle-vis" data-column="1">Two</a> - <a class="toggle-vis"
+            data-column="2">Three</a> - <a class="toggle-vis" data-column="3">Four</a>
+          - <a class="toggle-vis" data-column="4">Five</a> - <a class="toggle-vis"
+            data-column="5">Six</a> </div>
+        <table cellspacing="5" cellpadding="5" border="0">
+          <tbody>
+            <tr>
+              <td>Outline depth:</td>
+              <td><input type="text" id="max" name="max" size="2" maxlength="2" /></td>
+              <td>Enter a number 1, 2, 3,...</td>
+            </tr>
+          </tbody>
+        </table>
+        <table width="100%" cellspacing="0" id="example" class="display">
+          <thead class="dt-left">
+            <tr>
+              <th>One</th>
+              <th>Two</th>
+              <th>Three</th>
+              <th>Four</th>
+              <th>Five</th>
+              <th>Six</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>One</th>
+              <th>Two</th>
+              <th>Three</th>
+              <th>Four</th>
+              <th>Five</th>
+              <th>Six</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+              <td>A -- GENERAL WORKS</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>B -- PHILOSOPHY. PSYCHOLOGY. RELIGION</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>C -- AUXILIARY SCIENCES OF HISTORY</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>D -- WORLD HISTORY AND HISTORY OF EUROPE, ASIA, AFRICA,
+                AUSTRALIA, NEW ZEALAND, ETC.</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>E -- HISTORY OF THE AMERICAS</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>F -- HISTORY OF THE AMERICAS</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td>F1-975 United States local history</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F1-15 New England</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F106 Atlantic coast. Middle Atlantic States</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F206-220 The South. South Atlantic States</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F296-301 Gulf States. West Florida</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F396 Old Southwest. Lower Mississippi Valley</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F590.3-596.3 The West. Trans-Mississippi Region. Great Plains</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F721-722 Rocky Mountains. Yellowstone National Park</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F726-740 Montana</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>726 Periodicals. Societies. Collections</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>728 Museums. Exhibitions, exhibits</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>729 Gazetteers. Dictionaries. Geographic names</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>729.3 Guidebooks</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>730 Biography (Collective). Genealogy (Collective)</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>730.2 Historiography</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>730.5 Study and teaching</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>731 General works. Histories</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>732 Historic monuments (General). Illustrative material</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>733 Antiquities (Non-Indian)</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>735 Histories by period 1951-</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>735.2.A2 Biography - Collective</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>735.2.A3-Z Biography - Individual, A-Z</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.A-Z Regions, counties, etc., A-Z</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.A15 Counties</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.A16 Mountains</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.A17 Rivers</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.A18 Lakes</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.A19 Islands</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.A3 Absaroka National Forest</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B35 Beartooth Mountains</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B38 Beaverhead County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B48 Big Hole River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B49 Big Horn Canyon National Recreation Area</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B5 Big Horn County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B53 Big Horn Mountains</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B6 Bitter Root River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B62 Blackfoot River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B63 Blaine County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B66 Bob Marshall Wilderness</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B7 Boundaries</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B8 Broadwater County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.B85 Bull Mountain</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.C14 Cabinet National Forest</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.C25 Carbon County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.C3 Carter County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.C33 Cascade County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.C5 Chouteau County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.C55 Clark Fork River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.C9 Custer County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.D3 Daniels County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.D4 Dawson County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.D5 Deer Lodge County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.F2 Fallon County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.F3 Fergus County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.F58 Flathead County Including Tobacco Plains</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.F6 Flathead Lake and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.F66 Flying D Ranch</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.G18 Gallatin County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.G2 Gallatin Valley. East and West Gallatin Rivers</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.G3 Garfield County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.G45 Glacier County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.G5 Glacier National Park Including Lake McDonald, Mount
+                Reynolds</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.G6 Golden Valley County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.G7 Granite County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.H55 Hi-Line Region</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.H6 Hill County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.J4 Jefferson County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.J8 Judith Basin County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.J83 Judith River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.L3 Lake County Including St. Ignatius Mission</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.L65 Lewis and Clark Cavern State Park Including Morrison
+                Cave</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.L67 Lewis and Clark County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.L7 Liberty County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.L8 Lincoln County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M13 McCone County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M2 Madison County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M24 Madison River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M4 Meagher County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M48 Milk River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M5 Mineral County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M6 Missoula County Including Camas Prairie</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M7 Missouri River and Valley, Mont.</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.M9 Musselshell County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.P23 Park County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.P4 Petroleum County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.P5 Phillips County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.P6 Pondera County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.P8 Powder River County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.P88 Powell County Including Grant-Kohrs Ranch National
+                Historic Site</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.P9 Prairie County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.P93 Prickly Pear Creek and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.R3 Ravalli County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.R5 Richland County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.R8 Rocky Mountain region, Mont. Including Marias Pass</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.R9 Roosevelt County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.R95 Rosebud County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.R96 Rosebud Creek and Valley (Montana)</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.S3 Sanders County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.S4 Sheridan County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.S5 Silver Bow County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.S8 Stillwater County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.S84 Sun River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.S88 Swan River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.S9 Sweet Grass County Including West Boulder River and
+                Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.T4 Teton County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.T55 Tongue River and Valley</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.T6 Toole County Including Sweet Grass Hills</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.T7 Treasure County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.V3 Valley County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.W4 Wheatland County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.W5 Wibaux County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.Y3 Yellowstone County</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>737.Y4 Yellowstone River and Valley Including Fort Custer</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>739.A-Z Cities, towns, etc., A-Z</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>739.B5 Billings</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>739.B8 Butte</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>739.G7 Great Falls</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>739.H4 Helena</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>739.M7 Missoula</td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>740.A-Z Elements in the population</td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F741-755 Idaho</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F756-770 Wyoming</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F771-785 Colorado</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F786-790 New Southwest. Colorado River, Canyon, and Valley</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F850.5-851.5 Pacific States</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F965 The territories of the United States (General)</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F970 Insular possessions of the United States (General)</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td>F975 Central American, West Indian, and other countries
+                protected by and having close political affiliations with the
+                United States (General)</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td>F1001-1145.2 British America (including Canada)</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td>- Dutch America</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td>F1170 French America</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td><br />
+              </td>
+              <td>F1201-3799 Latin America. Spanish America</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>G -- GEOGRAPHY. ANTHROPOLOGY. RECREATION</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>H -- SOCIAL SCIENCES</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>J -- POLITICAL SCIENCE</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>K -- LAW</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>L -- EDUCATION</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>M -- MUSIC AND BOOKS ON MUSIC</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>N -- FINE ARTS</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>P -- LANGUAGE AND LITERATURE</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>Q -- SCIENCE</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>R -- MEDICINE</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>S -- AGRICULTURE</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>T -- TECHNOLOGY</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>U -- MILITARY SCIENCE</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>V -- NAVAL SCIENCE</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+            <tr>
+              <td>Z -- BIBLIOGRAPHY. LIBRARY SCIENCE. INFORMATION RESOURCES
+                (GENERAL)</td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+              <td><br />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Like this ...</p>
+        <p>abc <a name="after_abc"></a><a href="#abc_ref">^</a> def</p>
+      </div>
+      <div id="footer">
+        <div id="footer_text_left"> Page updated 2016 06 17</div>
+        <div id="footer_text_right"> YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
+            Haines</a> is in the <a href="http://creativecommons.org/publicdomain/zero/1.0/">Public
+            Domain</a> </div>
+        <div id="footer_text_right"> ../../js/...datatable and <a href="../../js/jquery.js">../../js/jquery.js</a>
+          used by this page are not in the public domain. They are covered by
+          licenses.</div>
+      </div>
+    </div>
+  </body>
+</html>
