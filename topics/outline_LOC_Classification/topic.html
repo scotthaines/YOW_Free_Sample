@@ -1,23 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html
-
-  xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <meta charset="utf-8">
     <title>data table example 04e</title>
-    <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
     <link href="../../css/styles.css" rel="stylesheet" type="text/css" media="screen and (min-width: 1024px)" />
     <link href="../../css/styles_narrow.css" rel="stylesheet" type="text/css" media="screen and (max-width: 1023px)" />
     <link href="../../css/print.css" rel="stylesheet" type="text/css" media="print" />
     <link rel="stylesheet" type="text/css" href="toggle-vis_extras.css" />
     <link rel="stylesheet" type="text/css" href="datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="datatables_custom.css" />
     <script type="text/javascript" src="../../js/jquery.js">
  </script>
     <script type="text/javascript" src="datatables.min.js"></script>
     <script type="text/javascript" class="init">
         
 $(document).ready(function() {
-        $('#example').DataTable( {
+        $('#outline_tbl_loc').DataTable( {
                 "paging":   false,
                 "ordering": false,
                 "columnDefs": [
@@ -25,7 +23,7 @@ $(document).ready(function() {
                 ]
         } );
 
-        var table = $('#example').DataTable();
+        var table = $('#outline_tbl_loc').DataTable();
         
         // Event listener to the two range filtering inputs to redraw on input
         $('#max').keyup( function() {
@@ -103,10 +101,7 @@ $.fn.dataTable.ext.search.push(
       </div>
       <div id="content">
         <h2>data table example 04e</h2>
-        <p>the This table is the data table custom filtering<a name="abc_ref"></a><a
-
-            href="#after_abc"><sub>[1]</sub></a> example reworked to be an
-          outline with depth filtering AND hiding of columns.</p>
+        <p>This outline...</p>
         <div> Toggle column: <a class="toggle-vis" data-column="0">One</a> - <a
 
             class="toggle-vis" data-column="1">Two</a> - <a class="toggle-vis"
@@ -115,7 +110,7 @@ $.fn.dataTable.ext.search.push(
           - <a class="toggle-vis" data-column="4">Five</a> - <a class="toggle-vis"
 
             data-column="5">Six</a> </div>
-        <table cellspacing="5" cellpadding="5" border="0">
+        <table class="outline_depth">
           <tbody>
             <tr>
               <td>Outline depth:</td>
@@ -124,7 +119,7 @@ $.fn.dataTable.ext.search.push(
             </tr>
           </tbody>
         </table>
-        <table width="100%" cellspacing="0" id="example" class="display">
+        <table id="outline_tbl_loc" class="display">
           <thead class="dt-left">
             <tr>
               <th>One</th>
@@ -2146,14 +2141,14 @@ $.fn.dataTable.ext.search.push(
           </tbody>
         </table>
         <p>Like this ...</p>
-        <p>abc <a name="after_abc"></a><a href="#abc_ref">^</a> def</p>
+        <p>abc</p>
       </div>
       <div id="footer">
         <div id="footer_text_left"> Page updated 2016 06 17</div>
         <div id="footer_text_right"> YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
             Haines</a> is in the <a href="http://creativecommons.org/publicdomain/zero/1.0/">Public
             Domain</a> </div>
-        <div id="footer_text_right"> ../../js/...datatable and <a href="../../js/jquery.js">../../js/jquery.js</a>
+        <div id="footer_text_right2"> ../../js/...datatable and <a href="../../js/jquery.js">../../js/jquery.js</a>
           used by this page are not in the public domain. They are covered by
           licenses.</div>
       </div>

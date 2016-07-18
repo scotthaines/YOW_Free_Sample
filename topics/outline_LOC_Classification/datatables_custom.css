@@ -1,0 +1,12 @@
+/* display is the class defined in datatables.css under dataTable.
+   .css files are cumulative so width can be set here. */
+table.display {
+  width: 100%;
+  border-spacing: 0px;
+}
+
+table.outline_depth {
+  border-width: 0px;
+  border-spacing: 5px;
+  padding: 5px;
+}
