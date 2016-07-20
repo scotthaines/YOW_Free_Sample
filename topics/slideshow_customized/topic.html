@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <title>Slideshow</title>
+  <title>Slideshow customized</title>
   <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
   <link href="../../css/styles.css" rel="stylesheet" type="text/css"
   media="screen and (min-width: 1024px)" />
@@ -20,14 +20,18 @@
   <script type="text/javascript" src="../../js/jquery.bxslider.js">
   </script>
   <!-- bxSlider CSS file -->
-  <link href="../../css/jquery.bxslider.css" rel="stylesheet" />
+  <link href="../../css/jquery.bxslider_customized.css" rel="stylesheet" />
   <script type="text/javascript">
   $(document).ready(function(){
   $('.bxslider').bxSlider(
   {
   mode: 'fade',
-  captions: true,
-  adaptiveHeight: false
+  startSlide: 0,
+  speed: 1,
+  captions: false,
+  adaptiveHeight: false,
+  pagerType: 'short',
+  pagerShortSeparator: ' of '
   });
 });</script>
 </head>
@@ -50,17 +54,33 @@
 </div>
 
 <div id="content">
-<h2>Slideshow</h2>
+<h2>Slideshow customized</h2>
 <ul class="bxslider">
   <li><img alt="Golden-mantled ground squirrel" src="./data/Golden-mantled_ground_squirrel_-_scale_25_percent.jpg"
-    title="Golden-Mantled Ground Squirrel" /></li>
+    width="100%" /> 
+
+    <div class="slideshow_caption">
+    <a href="./data/Golden-mantled_ground_squirrel.jpg">Golden-Mantled Ground
+    Squirrel</a></div>
+  </li>
   <li><img alt="Yellow-bellied marmot" src="./data/Yellow-bellied_marmot_-_scale_25_percent.jpg"
-    title="Yellow-Bellied Marmot" /></li>
+    width="100%" /> 
+
+    <div class="slideshow_caption">
+    <a href="./data/Yellow-bellied_marmot.jpg">Yellow-Bellied Marmot</a></div>
+  </li>
   <li><img alt="Yellow-bellied marmot and Golden-mantled ground squirrel" 
     src="./data/Yellow-bellied_marmot_and_Golden-mantled_ground_squirrel_-_scale_25_percent.jpg"
-    title="Yellow-Bellied Marmot and Golden-Mantled Ground Squirrel" /></li>
-  <li><p><strong>Grand Teton National Park - Inspiration Point - June
-    2015</strong></p>
+    width="100%" /> 
+
+    <div class="slideshow_caption">
+    <a
+    href="./data/Yellow-bellied_marmot_and_Golden-mantled_ground_squirrel.jpg">Yellow-Bellied
+    Marmot and Golden-Mantled Ground Squirrel</a></div>
+  </li>
+  <li>
+    <div class="slideshow_caption_bold">
+    Grand Teton National Park - Inspiration Point - June 2015</div>
     <p>At Inspiration Point the golden-mantled ground squirrel and
     yellow-bellied marmot show themselves to people on the rocks. This is
     without food to tempt them. You should not feed them. These particular
@@ -68,23 +88,44 @@
     accident or on purpose a few people probably do feed the animals. Still
     these animals keep an eye on people and can quickly hide in the rocks or
     get aggressive.</p>
-    <p>U.S. National Park Service, Grand Teton National Park, published
-    information: <a
-    href="https://www.nps.gov/grte/learn/nature/animals.htm">animals</a> and <a
-    href="https://www.nps.gov/grte/planyourvisit/hike.htm">hikes</a></p>
+
+    <div align="center">
+    U.S. National Park Service</div>
+
+    <div align="center">
+    Grand Teton National Park</div>
+
+    <div align="center">
+    published information:</div>
+
+    <div align="center">
+    <a href="https://www.nps.gov/grte/learn/nature/animals.htm">animals</a> and
+    <a href="https://www.nps.gov/grte/planyourvisit/hike.htm">hikes</a></div>
   </li>
 </ul>
 
 <p>This slideshow uses jQuery bxSlider<a name="L179" id="L179"></a><sub><a
-href="#L171">[1]</a></sub>. Press the left and right arrows on the image
-(slide). Press the Enter key to repeat the previous or next slide action again.
-Press the dots below the slideshow.</p>
+href="#L171">[1]</a></sub>. Press the left and right side of the image (slide).
+Watch the cursor change as you move it on and off either side of the image. The
+cursor change shows where the previous and next click are active. Press the
+Enter key to repeat the previous or next slide action again.</p>
 
 <p>If the slideshow does not fit vertically on the screen resize the browser
 window narrower to make the slideshow fit vertically.</p>
 
-<p>Compare this page with <a
-href="../slideshow_customized/topic.html">Slideshow customized</a>.</p>
+<p>Compare this page with <a href="../slideshow/topic.html">Slideshow</a>. In
+particular compare the large and unmarked previous and next click areas on this
+page with the left and right arrows visible on the image (slide) of the
+Slideshow page. These are controlled by this custom page's use of <a
+href="../../css/jquery.bxslider_customized.css">../../css/jquery.bxslider_customized.css</a>
+and the Slideshow page's use of the standard file <a
+href="../../css/jquery.bxslider.css">../../css/jquery.bxslider.css</a>. </p>
+
+<p>The fade from one slide to the next is also different. If you prefer the
+gradual fade of Slideshow and want that also on this Slideshow customized page
+you can remove the "speed: 1," parameter from the bxSlider initialization.
+This initialization is done in the source of this page's topic.html file. View
+page source to see it.</p>
 
 <p><strong>References</strong></p>
 <hr />
