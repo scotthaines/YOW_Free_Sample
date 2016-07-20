@@ -1,0 +1,20 @@
+.slideshow_caption
+{
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    background-color: gray;
+}
+
+.slideshow_caption a { color: white;}
+
+.slideshow_caption_bold
+{
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+}
