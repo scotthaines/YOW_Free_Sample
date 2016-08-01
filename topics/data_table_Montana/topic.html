@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Data Table - Montana</title>
+  <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
+  <link href="../../css/styles.css" rel="stylesheet" type="text/css"
+  media="screen and (min-width: 1024px)" />
+  <link href="../../css/styles_narrow.css" rel="stylesheet" type="text/css"
+  media="screen and (max-width: 1023px)" />
+  <link href="../../css/print.css" rel="stylesheet" type="text/css"
+		media="print" />
+  <link rel="stylesheet" type="text/css" href="toggle-vis_extras.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/datatables.min.css"/>
+  <script type="text/javascript" src="../../js/jquery.js">
+	</script>
+  <script type="text/javascript" src="../../js/datatables.min.js"></script>
+  <script type="text/javascript" src="data.js" class="init"></script>
+<script type="text/javascript" class="init">
+
+$(document).ready(function() {
+    var table = $('#example').DataTable( {
+	    "data": dataSet,
+        "paging": false,
+         "order": [],
+         "language": {
+             "info": "Total number of table entries: _TOTAL_"},
+        "stateSave": true,
+        "stateDuration": -1
+    } );
+
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+
+} );
+
+</script>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="header">
+<h1>YOW Free Sample</h1>
+</div>
+
+<div id="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../index.html">^</a></li>
+  <li><a href="../about/topic.html">About</a></li>
+  <li><a href="../download/topic.html">Download</a></li>
+</ul>
+</div>
+
+<div id="content">
+<h2>Data Table - Montana</h2>
+
+<p>This table lists media about or somehow related to Montana.</p>
+
+				<div>
+					Toggle column: <a class="toggle-vis" data-column="0">#</a> - <a class="toggle-vis" data-column="1">title</a> - <a class="toggle-vis" data-column=
+					"2">given name(s)</a> - <a class="toggle-vis" data-column="3">surname</a>
+				</div>
+	<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>title</th>
+                <th>given name(s)</th>
+                <th>surname</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>title</th>
+                <th>given name(s)</th>
+                <th>surname</th>
+            </tr>
+        </tfoot>
+</table>
+
+<p>Like this ...</p>
+
+</div>
+
+<div id="footer">
+
+<div id="footer_text_left">
+Page updated 2016 06 13</div>
+
+<div id="footer_text_right">
+YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
+Haines</a> is in the <a
+href="http://creativecommons.org/publicdomain/zero/1.0/">Public Domain</a>
+</div>
+<div id="footer_text_right">
+../../js/...datatable and <a href="../../js/jquery.js">../../js/jquery.js</a> used by this page are not in the public domain. They are covered by licenses.</div>
+      </div>
+</div>
+</body>
+</html>
