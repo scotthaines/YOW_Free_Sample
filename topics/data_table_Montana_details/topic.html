@@ -14,6 +14,7 @@
 		media="print" />
   <link rel="stylesheet" type="text/css" href="toggle-vis_extras.css" />
   <link rel="stylesheet" type="text/css" href="../../css/datatables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="details.css"/>
   <script type="text/javascript" src="../../js/jquery.js">
 	</script>
   <script type="text/javascript" src="../../js/datatables.min.js"></script>
@@ -36,11 +37,11 @@ function format ( d, rowIndex ) {
             '<td>title</td>'+
         //    '<td>'+d.title+'</td>'+
         //    '<td>'+d+'</td>'+
-            '<td>'+d[1]+'</td>'+
+            '<td>'+d[2]+'</td>'+
         '</tr>'+
         '<tr>'+
             '<td>given name(s)</td>'+
-            '<td>'+d[2]+'</td>'+
+            '<td>'+d[3]+'</td>'+
         '</tr>'+
         '<tr>'+
             '<td>Extra info:</td>'+
@@ -58,8 +59,11 @@ $(document).ready(function() {
              "info": "Total number of table entries: _TOTAL_"},
         "stateSave": true,
         "stateDuration": -1,
+        "columnDefs": [
+            { className: "details-control", "targets": [ 0 ] },
+            { "orderable": false, "targets": 0 } ],
         "createdRow": function ( row, data, index ) {
-            data[0] = index+1;
+            data[1] = index+1;
         }
     } );
 
@@ -68,20 +72,11 @@ $(document).ready(function() {
 	    .invalidate()
 	    .draw();
 
-    var zcolumn = table.column(2);
+    var zcolumn = table.column(3);
     zcolumn.visible(false);
 
-    $('a.toggle-vis').on( 'click', function (e) {
-        e.preventDefault();
- 
-        // Get the column API object
-        var column = table.column( $(this).attr('data-column') );
- 
-        // Toggle the visibility
-        column.visible( ! column.visible() );
-    } );
-
-    $('#example tbody').on( 'click', 'tr', function () {
+    // Add event listener for opening and closing details
+    $('#example tbody').on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');
         var row = table.row( tr );
  
@@ -95,6 +90,16 @@ $(document).ready(function() {
             row.child( format(row.data(), (row.index()+11)) ).show();
             tr.addClass('shown');
         }
+    } );
+
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
     } );
 
 } );
@@ -124,12 +129,13 @@ $(document).ready(function() {
 <p>This table lists media about or somehow related to Montana.</p>
 
 				<div>
-					Toggle column: <a class="toggle-vis" data-column="0">#</a> - <a class="toggle-vis" data-column="1">title</a> - <a class="toggle-vis" data-column=
-					"2">given name(s)</a> - <a class="toggle-vis" data-column="3">surname</a>
+					Toggle column: <a class="toggle-vis" data-column="1">#</a> - <a class="toggle-vis" data-column="2">title</a> - <a class="toggle-vis" data-column=
+					"3">given name(s)</a> - <a class="toggle-vis" data-column="4">surname</a>
 				</div>
 	<table id="example" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
+                <th></th>
                 <th>#</th>
                 <th>title</th>
                 <th>given name(s)</th>
@@ -138,6 +144,7 @@ $(document).ready(function() {
         </thead>
         <tfoot>
             <tr>
+                <th></th>
                 <th>#</th>
                 <th>title</th>
                 <th>given name(s)</th>
@@ -153,7 +160,7 @@ $(document).ready(function() {
 <div id="footer">
 
 <div id="footer_text_left">
-Page updated 2016 06 13</div>
+Page updated 2016 08 10</div>
 
 <div id="footer_text_right">
 YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott

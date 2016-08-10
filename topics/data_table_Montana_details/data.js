@@ -1,11 +1,13 @@
 var dataSet = [
     [
       "",
+      "",
       "The bloody Bozeman : the perilous trail to Montana's gold",
       "Dorothy M.",
       "Johnson",
     ],
     [
+      "",
       "",
       "Western badmen",
       "Dorothy M.",
@@ -13,11 +15,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "The Battle of the Little Bighorn",
       "Mari",
       "Sandoz",
     ],
     [
+      "",
       "",
       "\"I will fight no more forever\"; Chief Joseph and the Nez Perce War",
       "Merrill D.",
@@ -25,11 +29,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "Wolf Willow : a history, a story, and a memory of the last Plains frontier",
       "Wallace",
       "Stegner",
     ],
     [
+      "",
       "",
       "Zen and the art of motorcycle maintenance: an inquiry into values",
       "Robert M.",
@@ -37,11 +43,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "A river runs through it and other stories",
       "Norman",
       "Maclean",
     ],
     [
+      "",
       "",
       "James J. Hill and the opening of the Northwest",
       "Albro",
@@ -49,11 +57,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "The surrounded",
       "D'Arcy",
       "McNickle",
     ],
     [
+      "",
       "",
       "Fly the biggest piece back",
       "Steve",
@@ -61,11 +71,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "The last best place : a Montana anthology",
       "William",
       "Kittredge",
     ],
     [
+      "",
       "",
       "The big sky : a novel",
       "A. B.",
@@ -73,11 +85,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "Young men & fire",
       "Norman",
       "Maclean",
     ],
     [
+      "",
       "",
       "The horse whisperer",
       "Nicholas",
@@ -85,11 +99,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "More than petticoats, Remarkable Montana women",
       "Gayle Corbett",
       "Shirley",
     ],
     [
+      "",
       "",
       "Bucking the sun : a novel",
       "Ivan",
@@ -97,11 +113,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "Mavericks : the lives and battles of Montana's political legends",
       "John",
       "Morrison",
     ],
     [
+      "",
       "",
       "Dinosaur lives : unearthing an evolutionary saga",
       "John R.",
@@ -109,11 +127,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "A River runs through it",
       "Robert",
       "Redford",
     ],
     [
+      "",
       "",
       "The discovery of Yellowstone Park; journal of the Washburn Expedition to the Yellowstone and Firehole Rivers in the year 1870",
       "Nathaniel Pitt",
@@ -121,11 +141,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "Monte Dolack : the works",
       "Monte",
       "Dolack",
     ],
     [
+      "",
       "",
       "Dinosaurs under the Big Sky",
       "John R.",
@@ -133,11 +155,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "Montana, high, wide, and handsome",
       "Joseph Kinsey",
       "Howard",
     ],
     [
+      "",
       "",
       "Death of a dude : A Nero Wolfe mystery",
       "Rex",
@@ -145,11 +169,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "Montana Indians : their history and location",
       "Division of Indian Education",
       "State of Montana",
     ],
     [
+      "",
       "",
       "The masterworks of Charles M. Russell : a retrospective of paintings and sculpture",
       "Joan Carpenter",
@@ -157,11 +183,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "Missoula",
       "Philip",
       "Maechling",
     ],
     [
+      "",
       "",
       "Hiking Montana's Bob Marshall Wilderness : including Jewel Basin and the Scapegoat and Great Bear Wilderness areas",
       "Erik",
@@ -169,11 +197,13 @@ var dataSet = [
     ],
     [
       "",
+      "",
       "The Hiker's guide to Montana",
       "Bill",
       "Schneider",
     ],
     [
+      "",
       "",
       "Charles M. Russell : photographing the legend : a biography in words and pictures",
       "Larry Len",
