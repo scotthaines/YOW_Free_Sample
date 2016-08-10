@@ -21,11 +21,12 @@
 <script type="text/javascript" class="init">
 
 /* Formatting function for row details - modify as you need */
-function format ( d ) {
+function format ( d, rowIndex ) {
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
         '<tr>'+
-            '<td>Full name:</td>'+
+            '<td>row index + 11</td>'+
+            '<td>'+rowIndex+'</td>'+
         '</tr>'+
         '<tr>'+
             '<td>everything</td>'+
@@ -56,8 +57,16 @@ $(document).ready(function() {
          "language": {
              "info": "Total number of table entries: _TOTAL_"},
         "stateSave": true,
-        "stateDuration": -1
+        "stateDuration": -1,
+        "createdRow": function ( row, data, index ) {
+            data[0] = index+1;
+        }
     } );
+
+	table
+		.rows()
+	    .invalidate()
+	    .draw();
 
     var zcolumn = table.column(2);
     zcolumn.visible(false);
@@ -83,7 +92,7 @@ $(document).ready(function() {
         }
         else {
             // Open this row
-            row.child( format(row.data()) ).show();
+            row.child( format(row.data(), (row.index()+11)) ).show();
             tr.addClass('shown');
         }
     } );
