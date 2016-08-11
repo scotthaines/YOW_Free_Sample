@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <title>Data Table - Montana</title>
+  <title>Data Table - Montana Details</title>
   <meta name="generator" content="Amaya, see http://www.w3.org/Amaya/" />
   <link href="../../css/styles.css" rel="stylesheet" type="text/css"
   media="screen and (min-width: 1024px)" />
@@ -22,30 +22,20 @@
 <script type="text/javascript" class="init">
 
 /* Formatting function for row details - modify as you need */
-function format ( d, rowIndex ) {
+function format ( d ) {
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
         '<tr>'+
-            '<td>row index + 11</td>'+
-            '<td>'+rowIndex+'</td>'+
+            '<td>media</td>'+
+            '<td>'+d[5]+'</td>'+
         '</tr>'+
         '<tr>'+
-            '<td>everything</td>'+
-            '<td>'+d+'</td>'+
+            '<td>literary form</td>'+
+            '<td>'+d[6]+'</td>'+
         '</tr>'+
         '<tr>'+
-            '<td>title</td>'+
-        //    '<td>'+d.title+'</td>'+
-        //    '<td>'+d+'</td>'+
-            '<td>'+d[2]+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>given name(s)</td>'+
-            '<td>'+d[3]+'</td>'+
-        '</tr>'+
-        '<tr>'+
-            '<td>Extra info:</td>'+
-            '<td>And any further details here (images etc)...</td>'+
+            '<td>OCLC Number</td>'+
+            '<td><a href="http://www.worldcat.org/oclc/'+d[7]+'">'+d[7]+'</a></td>'+
         '</tr>'+
     '</table>';
 }
@@ -54,7 +44,7 @@ $(document).ready(function() {
     var table = $('#example').DataTable( {
 	    "data": dataSet,
         "paging": false,
-         "order": [],
+        "order": [],
          "language": {
              "info": "Total number of table entries: _TOTAL_"},
         "stateSave": true,
@@ -72,8 +62,9 @@ $(document).ready(function() {
 	    .invalidate()
 	    .draw();
 
-    var zcolumn = table.column(3);
-    zcolumn.visible(false);
+    table.column(5).visible(false);
+    table.column(6).visible(false);
+    table.column(7).visible(false);
 
     // Add event listener for opening and closing details
     $('#example tbody').on('click', 'td.details-control', function () {
@@ -87,7 +78,7 @@ $(document).ready(function() {
         }
         else {
             // Open this row
-            row.child( format(row.data(), (row.index()+11)) ).show();
+            row.child( format(row.data()) ).show();
             tr.addClass('shown');
         }
     } );
@@ -124,9 +115,9 @@ $(document).ready(function() {
 </div>
 
 <div id="content">
-<h2>Data Table - Montana</h2>
+<h2>Data Table - Montana Details</h2>
 
-<p>This table lists media about or somehow related to Montana.</p>
+<p>This table lists media about or somehow related to Montana. Press the (+) / (-) icons to toggle the display of details.</p>
 
 				<div>
 					Toggle column: <a class="toggle-vis" data-column="1">#</a> - <a class="toggle-vis" data-column="2">title</a> - <a class="toggle-vis" data-column=
@@ -140,6 +131,9 @@ $(document).ready(function() {
                 <th>title</th>
                 <th>given name(s)</th>
                 <th>surname</th>
+                <th>media</th>
+                <th>literary form</th>
+                <th>OCLC Number</th>
             </tr>
         </thead>
         <tfoot>
@@ -149,6 +143,9 @@ $(document).ready(function() {
                 <th>title</th>
                 <th>given name(s)</th>
                 <th>surname</th>
+                <th>media</th>
+                <th>literary form</th>
+                <th>OCLC Number</th>
             </tr>
         </tfoot>
 </table>
@@ -160,7 +157,7 @@ $(document).ready(function() {
 <div id="footer">
 
 <div id="footer_text_left">
-Page updated 2016 08 10</div>
+Page updated 2016 08 11</div>
 
 <div id="footer_text_right">
 YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott

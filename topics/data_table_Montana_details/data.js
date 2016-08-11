@@ -5,6 +5,9 @@ var dataSet = [
       "The bloody Bozeman : the perilous trail to Montana's gold",
       "Dorothy M.",
       "Johnson",
+      "book",
+      "non-fiction",
+      "208891",
     ],
     [
       "",
@@ -12,6 +15,9 @@ var dataSet = [
       "Western badmen",
       "Dorothy M.",
       "Johnson",
+      "book",
+      "non-fiction",
+      "96531",
     ],
     [
       "",
@@ -19,6 +25,9 @@ var dataSet = [
       "The Battle of the Little Bighorn",
       "Mari",
       "Sandoz",
+      "book",
+      "non-fiction",
+      "328476",
     ],
     [
       "",
@@ -26,6 +35,9 @@ var dataSet = [
       "\"I will fight no more forever\"; Chief Joseph and the Nez Perce War",
       "Merrill D.",
       "Beal",
+      "book",
+      "non-fiction",
+      "420111",
     ],
     [
       "",
@@ -33,6 +45,9 @@ var dataSet = [
       "Wolf Willow : a history, a story, and a memory of the last Plains frontier",
       "Wallace",
       "Stegner",
+      "book",
+      "non-fiction",
+      "480307",
     ],
     [
       "",
@@ -40,6 +55,9 @@ var dataSet = [
       "Zen and the art of motorcycle maintenance: an inquiry into values",
       "Robert M.",
       "Pirsig",
+      "book",
+      "non-fiction",
+      "673595",
     ],
     [
       "",
@@ -47,6 +65,9 @@ var dataSet = [
       "A river runs through it and other stories",
       "Norman",
       "Maclean",
+      "book",
+      "fiction",
+      "1733412",
     ],
     [
       "",
@@ -54,6 +75,9 @@ var dataSet = [
       "James J. Hill and the opening of the Northwest",
       "Albro",
       "Martin",
+      "book",
+      "non-fiction",
+      "2548433",
     ],
     [
       "",
@@ -61,6 +85,9 @@ var dataSet = [
       "The surrounded",
       "D'Arcy",
       "McNickle",
+      "book",
+      "fiction",
+      "3559598",
     ],
     [
       "",
@@ -68,6 +95,9 @@ var dataSet = [
       "Fly the biggest piece back",
       "Steve",
       "Smith",
+      "book",
+      "non-fiction",
+      "5101738",
     ],
     [
       "",
@@ -75,6 +105,9 @@ var dataSet = [
       "The last best place : a Montana anthology",
       "William",
       "Kittredge",
+      "book",
+      "non-fiction",
+      "18322146",
     ],
     [
       "",
@@ -82,6 +115,9 @@ var dataSet = [
       "The big sky : a novel",
       "A. B.",
       "Guthrie",
+      "book",
+      "fiction",
+      "49356082",
     ],
     [
       "",
@@ -89,6 +125,9 @@ var dataSet = [
       "Young men & fire",
       "Norman",
       "Maclean",
+      "book",
+      "non-fiction",
+      "25630633",
     ],
     [
       "",
@@ -96,6 +135,9 @@ var dataSet = [
       "The horse whisperer",
       "Nicholas",
       "Evans",
+      "book",
+      "fiction",
+      "32466529",
     ],
     [
       "",
@@ -103,6 +145,9 @@ var dataSet = [
       "More than petticoats, Remarkable Montana women",
       "Gayle Corbett",
       "Shirley",
+      "book",
+      "non-fiction",
+      "32820847",
     ],
     [
       "",
@@ -110,6 +155,9 @@ var dataSet = [
       "Bucking the sun : a novel",
       "Ivan",
       "Doig",
+      "book",
+      "fiction",
+      "34114146",
     ],
     [
       "",
@@ -117,6 +165,9 @@ var dataSet = [
       "Mavericks : the lives and battles of Montana's political legends",
       "John",
       "Morrison",
+      "book",
+      "non-fiction",
+      "36083675",
     ],
     [
       "",
@@ -124,6 +175,9 @@ var dataSet = [
       "Dinosaur lives : unearthing an evolutionary saga",
       "John R.",
       "Horner",
+      "book",
+      "non-fiction",
+      "36543406",
     ],
     [
       "",
@@ -131,6 +185,9 @@ var dataSet = [
       "A River runs through it",
       "Robert",
       "Redford",
+      "movie",
+      "fiction",
+      "42955743",
     ],
     [
       "",
@@ -138,6 +195,9 @@ var dataSet = [
       "The discovery of Yellowstone Park; journal of the Washburn Expedition to the Yellowstone and Firehole Rivers in the year 1870",
       "Nathaniel Pitt",
       "Langford",
+      "book",
+      "non-fiction",
+      "940541230",
     ],
     [
       "",
@@ -145,6 +205,9 @@ var dataSet = [
       "Monte Dolack : the works",
       "Monte",
       "Dolack",
+      "book",
+      "non-fiction",
+      "45133743",
     ],
     [
       "",
@@ -152,6 +215,9 @@ var dataSet = [
       "Dinosaurs under the Big Sky",
       "John R.",
       "Horner",
+      "book",
+      "non-fiction",
+      "47238733",
     ],
     [
       "",
@@ -159,6 +225,9 @@ var dataSet = [
       "Montana, high, wide, and handsome",
       "Joseph Kinsey",
       "Howard",
+      "book",
+      "non-fiction",
+      "3648026",
     ],
     [
       "",
@@ -166,6 +235,9 @@ var dataSet = [
       "Death of a dude : A Nero Wolfe mystery",
       "Rex",
       "Stout",
+      "book",
+      "fiction",
+      "29338",
     ],
     [
       "",
@@ -173,6 +245,9 @@ var dataSet = [
       "Montana Indians : their history and location",
       "Division of Indian Education",
       "State of Montana",
+      "e-publication",
+      "non-fiction",
+      "82528339",
     ],
     [
       "",
@@ -180,6 +255,9 @@ var dataSet = [
       "The masterworks of Charles M. Russell : a retrospective of paintings and sculpture",
       "Joan Carpenter",
       "Troccoli",
+      "book",
+      "non-fiction",
+      "317288402",
     ],
     [
       "",
@@ -187,6 +265,9 @@ var dataSet = [
       "Missoula",
       "Philip",
       "Maechling",
+      "book",
+      "non-fiction",
+      "535495449",
     ],
     [
       "",
@@ -194,6 +275,9 @@ var dataSet = [
       "Hiking Montana's Bob Marshall Wilderness : including Jewel Basin and the Scapegoat and Great Bear Wilderness areas",
       "Erik",
       "Molvar",
+      "book",
+      "non-fiction",
+      "45661743",
     ],
     [
       "",
@@ -201,6 +285,9 @@ var dataSet = [
       "The Hiker's guide to Montana",
       "Bill",
       "Schneider",
+      "book",
+      "non-fiction",
+      "34209253",
     ],
     [
       "",
@@ -208,7 +295,8 @@ var dataSet = [
       "Charles M. Russell : photographing the legend : a biography in words and pictures",
       "Larry Len",
       "Peterson",
+      "book",
+      "non-fiction",
+      "861209609",
     ]
 ];
-
-
