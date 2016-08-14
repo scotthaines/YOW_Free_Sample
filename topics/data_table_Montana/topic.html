@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Data Table - Montana</title>
+  <link href="../../css/styles.css" rel="stylesheet" type="text/css"
+  media="screen and (min-width: 1024px)" />
+  <link href="../../css/styles_narrow.css" rel="stylesheet" type="text/css"
+  media="screen and (max-width: 1023px)" />
+  <link href="../../css/print.css" rel="stylesheet" type="text/css" media="print" />
+  <link rel="stylesheet" type="text/css" href="../../css/toggle-vis_extras.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/datatables.min.css"/>
+  <script type="text/javascript" src="../../js/jquery.js"></script>
+  <script type="text/javascript" src="../../js/datatables.min.js"></script>
+  <script type="text/javascript" src="data.js" class="init"></script>
+<script type="text/javascript" class="init">
+
+$(document).ready(function() {
+    var table = $('#example').DataTable( {
+        "data": dataSet,
+        "paging": false,
+        "order": [],
+        "language": {
+             "info": "Total number of table entries: _TOTAL_"},
+        "stateSave": true,
+        "stateDuration": -1
+    } );
+
+    $('a.toggle-vis').on( 'click', function (e) {
+        e.preventDefault();
+ 
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+ 
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+    } );
+
+} );
+</script>
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="header">
+<h1>YOW Free Sample</h1>
+</div>
+
+<div id="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../index.html">^</a></li>
+  <li><a href="../about/topic.html">About</a></li>
+  <li><a href="../download/topic.html">Download</a></li>
+</ul>
+</div>
+
+<div id="content">
+<h2>Data Table - Montana</h2>
+
+<p>Toggle column display on and off. Search for words to filter the list. Sort by columns. <a href="../data_table_Montana_details/topic.html">Data Table - Montana Details</a> has extra information in child rows. <a href="../table_Montana/topic.html">Sortable Table - Montana</a>
+has the same data but uses a different library to display it.</p>
+
+    <div>
+        Toggle column: <a class="toggle-vis" data-column="0">#</a> - <a class="toggle-vis" data-column="1">title</a> - <a class="toggle-vis" data-column=
+        "2">given name(s)</a> - <a class="toggle-vis" data-column="3">surname</a>
+    </div>
+    <table id="example" class="display compact cell-border" style="width:100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>title</th>
+                <th>given name(s)</th>
+                <th>surname</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>title</th>
+                <th>given name(s)</th>
+                <th>surname</th>
+            </tr>
+        </tfoot>
+</table>
+
+  <p>This page uses the DataTables jQuery library for the display of its table.<a id="ref_top01"></a><sub><a href="#ref_bot01">[1]</a></sub> This HTML5 page with its "data-*" attributes is uneditable by Amaya. Use a text editor or an HTML5 capable editor. The page was validated with a file upload at <a href="https://validator.w3.org/">https://validator.w3.org/</a> and found to have "No errors or warnings to show".</p>
+
+  <p>This short list of media related to Montana<a id="L2989"></a><sub><a href="#L2985">[2]</a></sub> provides real data in 
+a table. Real data better shows this use of the DataTables library.</p>
+
+
+  <p>This table lists media about or somehow related to Montana. This list is just a sample. Many more books, movies, e-publications, music, audio-books and webpages could be added.</p>
+
+<p><strong>Reference</strong></p>
+<hr />
+<ol>
+  <li><a id="ref_bot01"></a><a href="#ref_top01">^</a> See DataTables at <a href="https://datatables.net/">https://datatables.net/</a> and <a href="https://github.com/DataTables">https://github.com/DataTables</a> retrieved on 2016 07 19<br />This use of DataTables was created from the datatables.net site's Download builder using these settings: Main libraries, JQuery - No JQuery, Styling - DataTables, DataTables - DataTables, Extensions - all set to Do not include, Packaging options, Minification - Minify, Concatenate - Single file, CDN - Local files.</li>
+  <li><a id="L2985"></a><a href="#L2989">^</a> The list is my own creation. Titles, names and other information were checked by looking at Library of Congress Online Catalog MARC 
+    records. See <a href="https://catalog.loc.gov/vwebv/searchKeyword">https://catalog.loc.gov/vwebv/searchKeyword</a>
+ Retrieved during July and August 2016.</li>
+</ol>
+</div>
+      <div id="footer">
+        <div id="footer_text_left"> Page updated 2016 08 14</div>
+        <div id="footer_text_right"> YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
+            Haines</a> is in the <a href="http://creativecommons.org/publicdomain/zero/1.0/">Public
+            Domain</a> </div>
+        <div id="footer_text_right2"> <a href="../../js/datatables.min.js">../../js/datatables.min.js</a> and <a href="../../js/jquery.js">../../js/jquery.js</a>
+          used by this page are not in the public domain. They are covered by
+          licenses.</div>
+      </div>
+    </div>
+  </body>
+</html>
