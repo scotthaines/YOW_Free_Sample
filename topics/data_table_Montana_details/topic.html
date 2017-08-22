@@ -61,6 +61,8 @@ $(document).ready(function() {
     table.column(6).visible(false);
     table.column(7).visible(false);
 
+	var childRowsHidden = 0;
+
     // Add event listener for opening and closing details
     $('#example tbody').on('click', 'td.details-control', function () {
         var tr = $(this).closest('tr');
@@ -69,23 +71,42 @@ $(document).ready(function() {
         if ( row.child.isShown() ) {
             // This row is already open - close it
             row.child.hide();
-            tr.removeClass('shown');
         }
         else {
             // Open this row
             row.child( format(row.data()) ).show();
-            tr.addClass('shown');
         }
     } );
 
     $('a.toggle-vis').on( 'click', function (e) {
         e.preventDefault();
+
+		if("0" == $(this).attr('data-column')) {
+			table.rows().every( function ( rowIdx, tableLoop, rowLoop ) {
+		        if ( childRowsHidden ) {
+			        // Hide this row
+			        this.child( format(this.data()) ).hide();
+				}
+				else {
+			        // Open this row
+			        this.child( format(this.data()) ).show();
+				}
+			} );
+
+			if ( childRowsHidden ) {
+				childRowsHidden = 0;
+			}
+			else {
+				childRowsHidden = 1;
+			}
+		}
+		else { 
+	        // Get the column API object
+		    var column = table.column( $(this).attr('data-column') );
  
-        // Get the column API object
-        var column = table.column( $(this).attr('data-column') );
- 
-        // Toggle the visibility
-        column.visible( ! column.visible() );
+			// Toggle the visibility
+	        column.visible( ! column.visible() );
+		}
     } );
 
 } );
@@ -112,11 +133,14 @@ $(document).ready(function() {
 <div id="content">
 <h2>Data Table - Montana Details</h2>
 
-<p>Toggle column display on and off. Search for words to filter the list. Sort by columns. <a href="../data_table_Montana/topic.html">Data Table - Montana</a> does not have extra information in child rows. Press the (+) / (-) icons to toggle the display of details.</p>
+<p>Toggle column display on and off. Toggle all row detail display on and off. Search for words to filter the list. Sort by columns. Press the (+) / (-) icons to toggle the display of details. Note that <a href="../data_table_Montana/topic.html">Data Table - Montana</a> does not have detail information in child rows.</p>
 
     <div>
         Toggle column: <a class="toggle-vis" data-column="1">#</a> - <a class="toggle-vis" data-column="2">title</a> - <a class="toggle-vis" data-column=
         "3">given name(s)</a> - <a class="toggle-vis" data-column="4">surname</a>
+    </div>
+    <div>
+        Toggle: <a class="toggle-vis" data-column="0">all row details</a>
     </div>
     <table id="example" class="display compact cell-border" style="width:100%">
         <thead>
@@ -162,7 +186,7 @@ a table. Real data better shows this use of the DataTables library.</p>
 </ol>
 </div>
       <div id="footer">
-        <div id="footer_text_left"> Page updated 2016 11 25</div>
+        <div id="footer_text_left"> Page updated 2017 08 22</div>
         <div id="footer_text_right"> YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
             Haines</a> is in the <a href="http://creativecommons.org/publicdomain/zero/1.0/">Public
             Domain</a> </div>
