@@ -15,7 +15,7 @@
   <link href="../../css/slideshow_caption.css" rel="stylesheet" type="text/css"
   />
   <script type="text/javascript" src="../../js/jquery.js">
-	</script>
+    </script>
   <!-- bxSlider Javascript file -->
   <script type="text/javascript" src="../../js/jquery.bxslider.js">
   </script>
@@ -23,16 +23,112 @@
   <link href="../../css/jquery.bxslider_customized.css" rel="stylesheet" />
   <script type="text/javascript">
   $(document).ready(function(){
-  $('.bxslider').bxSlider(
+
+  // Get the address line's URL.
+  var url = window.location.href;
+
+  // maxSlideNum must equal the total number of slides.
+  var maxSlideNum = 5;
+
+  var slide = url.split('#');
+
+  var slidenumber = 1;
+  if (slide[1]) {
+    var slidenumber = slide[1].replace(/([a-z,0,/-])/g, '');
+  }
+
+  if (slidenumber > maxSlideNum) {
+    slidenumber = maxSlideNum;
+  }
+
+  if (slidenumber < 1) {
+    slidenumber = 1;
+  }
+
+  if (!slidenumber){
+    slidenumber = 1;
+  }
+
+  // bxSlider
+  slider = $('.bxslider').bxSlider(
   {
-  mode: 'fade',
-  startSlide: 0,
-  speed: 1,
-  captions: false,
-  adaptiveHeight: false,
-  pagerType: 'short',
-  pagerShortSeparator: ' of '
+    mode: 'fade',
+    startSlide: slidenumber - 1,
+    speed: 1,
+    captions: false,
+    adaptiveHeight: false,
+    pager: true,
+    pagerType: 'short',
+    pagerShortSeparator: ' of ',
+
+    onSliderLoad: function(currentIndex){
+        // Commented out debugging line flows.
+        // alert('Slider has finished loading. Click OK to continue!');
+
+        // Convert from origin 0 to origin 1 for display.
+        currentIndex = currentIndex + 1;
+
+        // Update the hash in the browser URL display.
+        location.hash = currentIndex.toString();
+    },
+
+    onSlideAfter: function($slideElement, oldIndex, newIndex){
+        // Commented out debugging line flows.
+        // alert('A slide has finished transitioning. Click OK to continue!');
+
+        // Convert from origin 0 to origin 1 for display.
+        newIndex = newIndex + 1;
+
+        // Update the hash in the browser URL display.
+        location.hash = newIndex.toString();
+    }
+
+
   });
+
+  // Run on URL hash change.
+  $(window).bind( 'hashchange', function(e) {
+    // Get the # text at the end of the URL if it exists.
+    // This includes the '#'.
+    var hash = location.hash;
+
+    // Turn the has value string into a number if it is a number.
+    // substring(1) gets past the '#' at the beginning.
+    var hashNumber = parseInt(hash.toString().substring(1));
+                            // 
+    // If hashNumber is not a number
+    if ( !hashNumber) {
+        hashNumber = 1;
+        // Update the hash in the browser URL display.
+        location.hash = hashNumber.toString();
+    }
+
+    if (hashNumber > maxSlideNum) {
+        hashNumber = maxSlideNum;
+        // Update the hash in the browser URL display.
+        location.hash = hashNumber.toString();
+    }
+
+    if (hashNumber < 1) {
+        hashNumber = 1;
+        // Update the hash in the browser URL display.
+        location.hash = hashNumber.toString();
+    }
+
+    var current = slider.getCurrentSlide();
+    current = current + 1;
+
+    // Commented out debugging line flows.
+    // alert('abc ' + current.toString() + ' ' + hashNumber.toString());
+
+    // If the desired slide is not the current slide
+    if (hashNumber != current) {
+        // Update the display to the desired slide.
+        hashNumber = hashNumber - 1;    // Convert to origin zero.
+        slider.goToSlide(hashNumber);
+    }
+  });
+
 });</script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -78,6 +174,12 @@
 
     <div class="slideshow_caption">
     <a href="./topic_files/Yellow-bellied_marmot.jpg">Yellow-Bellied Marmot</a></div>
+  </li>
+  <li><img alt="Just the Yellow-Bellied Marmot" src="./topic_files/Just_the_yellow-bellied_marmot_-_scale_50_percent.jpg"
+    width="50%" /> 
+
+    <div class="slideshow_caption">
+    <a href="./topic_files/Just_the_yellow-bellied_marmot.jpg">Just the Yellow-Bellied Marmot</a></div>
   </li>
   <li><img alt="Yellow-bellied marmot and Golden-mantled ground squirrel" 
     src="./topic_files/Yellow-bellied_marmot_and_Golden-mantled_ground_squirrel_-_scale_25_percent.jpg"
@@ -137,6 +239,8 @@ you can remove the "speed: 1," parameter from the bxSlider initialization.
 This initialization is done in the source of this page's topic.html file. View
 page source to see it.</p>
 
+<p>This page has the slide number after the hash '#' symbol in the URL address line of the browser. Enter a slide's number in the URL address to display that slide. Note when creating a slideshow, in topic.html the maxSlideNum must equal the total number of slides.</p>
+
 <p><strong>References</strong></p>
 <hr />
 <ol>
@@ -151,7 +255,7 @@ page source to see it.</p>
 <div id="footer">
 
 <div id="footer_text_left">
-Page updated 2016 11 25</div>
+Page updated 2017 09 07</div>
 
 <div id="footer_text_right">
 YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
