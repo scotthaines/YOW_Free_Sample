@@ -41,7 +41,24 @@
 	<button onclick="document.getElementById('vid_player').pause()">Pause</button>
 	<button onclick="document.getElementById('vid_player').currentTime-=5">&lt 5 seconds</button>
 	<button onclick="document.getElementById('vid_player').currentTime+=10">10 seconds &gt</button>
+	<span id="demo"> &nbsp; 0 | 0</span>
 </div> 
+
+<!--  <p>Playback position: <span id="demo"> 0 | 0</span></p> -->
+
+<script>
+// Get the video element with id="myVideo"
+var vid = document.getElementById("vid_player");
+
+// Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
+vid.ontimeupdate = function() {myFunction()};
+
+function myFunction() {
+    // Display the current position of the video in a p element with id="demo"
+    document.getElementById("demo").innerHTML = '&nbsp;' + vid.currentTime.toFixed(0) + ' | ' + vid.duration.toFixed(0);
+//    document.getElementById("demo").innerHTML = vid.duration;
+}
+</script>
 
 <dl>
   <dt>Duration: 46 seconds</dt>
@@ -61,7 +78,7 @@
 </ol>
 </div>
       <div id="footer">
-        <div id="footer_text_left"> Page updated 2017 20 21</div>
+        <div id="footer_text_left"> Page updated 2017 11 05</div>
         <div id="footer_text_right"> YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
             Haines</a> is in the <a href="http://creativecommons.org/publicdomain/zero/1.0/">Public
             Domain</a> </div>
