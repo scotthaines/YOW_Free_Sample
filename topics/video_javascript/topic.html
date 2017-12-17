@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Video - JavaScript</title>
+  <link href="../../css/styles.css" rel="stylesheet" type="text/css"
+  media="screen and (min-width: 1024px)" />
+  <link href="../../css/styles_narrow.css" rel="stylesheet" type="text/css"
+  media="screen and (max-width: 1023px)" />
+  <link href="../../css/print.css" rel="stylesheet" type="text/css" media="print" />
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="header">
+<h1>YOW Free Sample</h1>
+</div>
+
+<div id="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../index.html">^</a></li>
+  <li><a href="../about/topic.html">About</a></li>
+  <li><a href="../download/topic.html">Download</a></li>
+</ul>
+</div>
+
+<div id="content">
+<h2>Video - JavaScript</h2>
+
+
+  <p><strong>Glacier National Park</strong></p>
+  <p>This video<a name="L101" id="L101"></a><sub><a href="#L102">[1]</a></sub> of mountain goats in Glacier National Park<a name="L201" id="L201"></a><sub><a href="#L202">[2]</a></sub> is credited to the US Natonal Park Service<a name="L301" id="L301"></a><sub><a href="#L302">[3]</a></sub>.</p>
+  <video id="vid_player" width="100%">
+    <source src="topic_files\glac-GNPGR-MountainGoats1_1280x720.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+<div>
+	<button onclick="document.getElementById('vid_player').play()">Play</button>
+	<button onclick="document.getElementById('vid_player').pause()">Pause</button>
+	<button onclick="document.getElementById('vid_player').currentTime-=5">&lt 5 Sec.</button>
+	<button onclick="document.getElementById('vid_player').currentTime+=10">10 Sec. &gt</button>
+	<span id="timePosition"> &nbsp; &numsp; 0 | &numsp; 0</span>
+    <button id="mutebtn" class="button1">Mute</button>
+    <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
+	<span id="volumenumber"> &nbsp; 0 &percnt;</span>
+    <button id="fullscreenbtn">[ &nbsp; ]</button>
+</div> 
+
+<!--  <p>Playback position: <span id="timePosition">&numsp; 0 |&numsp; 0</span></p> -->
+
+<script>
+// Get the video element with id="myVideo"
+var vid = document.getElementById("vid_player");
+
+// Assign an ontimeupdate event to the video element, and execute a
+// function if the current playback position has changed.
+vid.ontimeupdate = function() {ctrlDisplayUpdate()};
+
+function ctrlDisplayUpdate() {
+    // Display the current volume of the video in a p element with id="timePosition"
+//    document.getElementById("volumenumber").innerHTML = '&numsp;' + vid.volume * 100 + '&percnt;';
+
+    // Display mute button per the current mute state.
+    vidmuteUpdate();
+
+// Display the current position of the video in a p element with id="timePosition"
+    if (Math.floor(vid.currentTime) < 10) {
+	   document.getElementById("timePosition").innerHTML = '&nbsp;' + '&numsp;' + Math.floor(vid.currentTime) + ' | ' + Math.floor(vid.duration);
+	}
+	else {
+	   document.getElementById("timePosition").innerHTML = '&nbsp;' + Math.floor(vid.currentTime) + ' | ' + Math.floor(vid.duration);
+	}
+									  
+//    document.getElementById("timePosition").innerHTML = vid.duration;
+}
+
+function initPlayer(){
+    // Set object references
+    mutebtn = document.getElementById("mutebtn");
+    mutebtn.style.width = "68px";
+//    mutebtn.style.background = '#4CAF50'; /* Green */
+//    mutebtn.innerHTML = '<img src="../../css/images/details_open_and_close.png" />';
+    volumeslider = document.getElementById("volumeslider");
+    fullscreenbtn = document.getElementById("fullscreenbtn");
+	var volume100Scale = Math.floor(vid.volume * 100);
+    document.getElementById("volumenumber").innerHTML = volume100Scale + '&percnt;';
+    ctrlDisplayUpdate();
+
+	// Add event listeners
+    mutebtn.addEventListener("click",vidmute,false);
+    volumeslider.addEventListener("change",setvolume,false);
+	fullscreenbtn.addEventListener("click",toggleFullScreen,false);
+}
+window.onload = initPlayer;
+
+function vidmuteUpdate(){
+    mutebtn.style.width = "68px";
+	if(vid.muted){
+		mutebtn.innerHTML = "Unmute";
+	} else {
+		mutebtn.innerHTML = "Mute";
+	}
+}
+
+function vidmute(){
+    mutebtn.style.width = "68px";
+	if(vid.muted){
+		vid.muted = false;
+		mutebtn.innerHTML = "Mute";
+	} else {
+		vid.muted = true;
+		mutebtn.innerHTML = "Unmute";
+	}
+}
+
+function setvolume(){
+	vid.volume = volumeslider.value / 100;
+	var volume100Scale = Math.floor(vid.volume * 100);
+	if (volume100Scale < 10) {
+	   volume100Scale = "&numsp;" + "&numsp;" + volume100Scale;
+	}
+	else {
+		if (volume100Scale < 100) {
+		   volume100Scale = "&numsp;" + volume100Scale;
+		}
+	}
+    document.getElementById("volumenumber").innerHTML = volume100Scale + '&percnt;';
+}
+
+function toggleFullScreen(){
+	if(vid.requestFullScreen){
+		vid.requestFullScreen();
+	} else if(vid.webkitRequestFullScreen){
+		vid.webkitRequestFullScreen();
+	} else if(vid.mozRequestFullScreen){
+		vid.mozRequestFullScreen();
+	}
+}
+</script>
+
+  <p><strong>Description</strong></p>
+  <p>&quot;Two mountain goat kids play &apos;king of the mountain&apos; high above Logan Creek, just off the Going-to-the-Sun Road.&quot;</p>
+
+<p><strong>Reference</strong></p>
+<hr />
+<ol>
+  <li><a name="L102" id="L102"></a><a href="#L101">^</a> This page uses the HTML5 video element. Also it uses JavaScript rather than the HTML5 video element's controls attribute. The advantage of JavaScript over the video control attribute is finer control. The disadvantages are code and graphics to maintain. More control means for example the skip ahead and skip back buttons.</li>
+  <li><a name="L202" id="L202"></a><a href="#L201">^</a> Glacier National Park, Mountain Goats video<br /><a href="https://www.nps.gov/media/video/view.htm?id=8B580DDE-155D-451F-679E9388B466D259">https://www.nps.gov/media/video/view.htm?id=8B580DDE-155D-451F-679E9388B466D259</a> retrieved on 2017 11 05</li>
+  <li><a name="L302" id="L302"></a><a href="#L301">^</a> The video is in the public domain. The video has the National Park Service logo on it and no copyright symbol so by the usage information statement on <a href="https://www.nps.gov/media/video/view.htm?id=8B580DDE-155D-451F-679E9388B466D259">the page with the video</a> it is in the public domain, "Multimedia credited to NPS without any copyright symbol are public domain."<br><br>"A work of the United States government, as defined by the United States copyright law, is "a work prepared by an officer or employee" of the federal government "as part of that person's official duties." In general, under section 105 of the Copyright Act, such works are not entitled to domestic copyright protection under U.S. law and are therefore in the public domain." from <a href="https://en.wikipedia.org/wiki/Copyright_status_of_work_by_the_U.S._government">https://en.wikipedia.org/wiki/Copyright_status_of_work_by_the_U.S._government</a><br><br>The page with the video also states "Date Created: 2015-07-14", "Credit: Glacier National Park"</li>
+</ol>
+</div>
+  <div id="footer">
+        <div id="footer_text_left"> Page updated 2017 12 16</div>
+        <div id="footer_text_right"> YOW Free Sample by <a href="https://sites.google.com/site/friedbook/">Scott
+            Haines</a> is in the <a href="http://creativecommons.org/publicdomain/zero/1.0/">Public
+            Domain</a> </div>
+        <div id="footer_text_right2">The video, from the USA National Parks Service, is in the Public Domain.</div>
+  </div>
+</div>
+</body>
+</html>
