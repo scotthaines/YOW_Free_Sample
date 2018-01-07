@@ -31,19 +31,20 @@
 <h2>Video.js - Mountain Goats</h2>
 
   <video id="vid_player" width="100%">
-    <source src="topic_files/glac-GNPGR-MountainGoats1_1280x720.mp4" type="video/mp4">
+<!--    <source src="topic_files/glac-GNPGR-MountainGoats1_1280x720.mp4" type="video/mp4">> -->
+    <source src="Glamwikifr_03_12_2010_cultural_policies_Xavier_Crouan.ogv" type="video/ogg">>
     Your browser does not support HTML5 video.
   </video>
 <div>
-	<button onclick="document.getElementById('vid_player').play()">Play</button>
-	<button onclick="document.getElementById('vid_player').pause()">Pause</button>
-	<button onclick="document.getElementById('vid_player').currentTime-=5">&lt 5 Sec.</button>
-	<button onclick="document.getElementById('vid_player').currentTime+=10">10 Sec. &gt</button>
-	<span id="timePosition"> &nbsp; &numsp; 0 | &numsp; 0</span>
-	<input type="range" id="seek-bar" value="0">
+    <button onclick="document.getElementById('vid_player').play()">Play</button>
+    <button onclick="document.getElementById('vid_player').pause()">Pause</button>
+    <button onclick="document.getElementById('vid_player').currentTime-=5">&lt 5 Sec.</button>
+    <button onclick="document.getElementById('vid_player').currentTime+=10">10 Sec. &gt</button>
+    <span id="timePosition"> &nbsp; &numsp; 0 | &numsp; 0</span>
+    <input type="range" id="seek-bar" value="0">
     <button id="mutebtn" class="button1">Mute</button>
     <input id="volumeslider" type="range" min="0" max="100" value="100" step="1">
-	<span id="volumenumber"> &nbsp; 0 &percnt;</span>
+    <span id="volumenumber"> &nbsp; 0 &percnt;</span>
     <button id="fullscreenbtn">[ &nbsp; ]</button>
 </div> 
 
